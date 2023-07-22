@@ -1,0 +1,72 @@
+:root {
+  color-scheme: dark only;
+}
+
+@font-face {
+  font-family: "Nexa";
+  src: url("/fonts/Nexa_Heavy.woff2") format("woff2");
+  font-weight: 700;
+  size-adjust: 125%;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Nexa";
+  src: url("/fonts/Nexa_ExtraLight.woff2") format("woff2");
+  font-weight: 400;
+  size-adjust: 125%;
+  font-display: swap;
+}
+
+html,
+body {
+  color: #ededed;
+  background-color: #030303;
+  font-family: "Nexa";
+  -webkit-tap-highlight-color: transparent;
+}
+
+main {
+  width: 100%;
+  min-height: calc(100svh);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+h1 {
+  font-size: 125%;
+  font-weight: bold;
+}
+
+u,
+a:hover {
+  text-decoration: underline;
+}
+
+a {
+  cursor: pointer;
+}
+
+footer {
+  padding: 1.5% 3.5%;
+  display: flex;
+  justify-content: space-between;
+  font-size: 70%;
+}
+
+@media (max-width: 768px) {
+  a {
+    text-decoration: underline;
+  }
+
+  footer {
+    font-size: min(2.5vw, 65%);
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}

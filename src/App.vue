@@ -1,30 +1,91 @@
 <script setup lang="ts">
-import HelloWorld from "./components/HelloWorld.vue";
+const host = window.location.host;
 </script>
 
 <template>
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
-  </div>
-  <HelloWorld msg="Vite + Vue" />
+  <main>
+    <div class="text-overlay">
+      <h1>
+        Strona <u>{{ host }}</u> nie istnieje
+      </h1>
+      <p>Upewnij się, że wpisana nazwa jest poprawna.</p>
+    </div>
+
+    <div class="background-image" />
+
+    <a
+      class="domain"
+      href="https://www.klalo.pl/"
+    > hosting klalo.pl</a>
+  </main>
+
+  <footer>
+    <p>
+      Domena stworzona i utrzymywana przez
+      <a href="https://github.com/Quanosek">Jakuba Kłało</a>
+    </p>
+
+    <p>Wszelkie prawa zastrzeżone &#169; 2023</p>
+  </footer>
 </template>
 
-<style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+<style scoped lang="scss">
+.background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("./assets/wallpaper.webp") no-repeat center center;
+  background-size: cover;
+  animation: animation 200s infinite alternate;
+  filter: blur(2px);
+
+  @keyframes animation {
+    0% {
+      transform: scale(1.8) rotate(0deg);
+    }
+    100% {
+      transform: scale(1.6) rotate(35deg);
+    }
+  }
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+
+.text-overlay {
+  z-index: 1;
+  padding: 1.5% 2%;
+  width: 100%;
+  position: relative;
+  bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: rgba(#000000, 0.45);
+  font-size: 125%;
 }
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
+
+.text-overlay,
+.domain {
+  text-shadow: 2px 2px 4px rgba(#000000, 0.8);
+}
+
+.domain {
+  position: relative;
+  text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  .text-overlay {
+    bottom: 8vw;
+    padding: min(1rem, 5%) 2%;
+    font-size: min(5vw, 110%);
+  }
+
+  .domain {
+    bottom: 3vw;
+    font-size: min(4vw, 100%);
+  }
 }
 </style>
