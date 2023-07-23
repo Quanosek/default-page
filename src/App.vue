@@ -6,22 +6,22 @@ const host = window.location.host;
   <main>
     <div class="text-overlay">
       <h1>
-        Strona <u>{{ host }}</u> nie istnieje
+        Strona
+        <span>{{ host }}</span>
+        nie istnieje
       </h1>
-      <p>Upewnij się, że wpisana nazwa jest poprawna.</p>
+
+      <p>Upewnij się, że wpisana nazwa jest poprawna</p>
     </div>
 
     <div class="background-image" />
 
-    <a
-      class="domain"
-      href="https://www.klalo.pl/"
-    > hosting klalo.pl</a>
+    <a class="domain" href="https://www.klalo.pl/"> domena klalo.pl</a>
   </main>
 
   <footer>
     <p>
-      Domena stworzona i utrzymywana przez
+      Stworzone i utrzymywane przez
       <a href="https://github.com/Quanosek">Jakuba Kłało</a>
     </p>
 
@@ -64,6 +64,12 @@ const host = window.location.host;
   text-align: center;
   background-color: rgba(#000000, 0.45);
   font-size: 125%;
+
+  span {
+    user-select: text;
+    text-decoration: underline;
+    cursor: text;
+  }
 }
 
 .text-overlay,

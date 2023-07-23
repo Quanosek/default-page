@@ -24,6 +24,7 @@ body {
   background-color: #030303;
   font-family: "Nexa";
   -webkit-tap-highlight-color: transparent;
+  user-select: none;
 }
 
 main {
@@ -35,6 +36,7 @@ main {
   justify-content: center;
   align-items: center;
   overflow: hidden;
+  cursor: default;
 }
 
 h1 {
@@ -42,13 +44,12 @@ h1 {
   font-weight: bold;
 }
 
-u,
-a:hover {
-  text-decoration: underline;
-}
-
 a {
   cursor: pointer;
+
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
 footer {
