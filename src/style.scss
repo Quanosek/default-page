@@ -1,28 +1,67 @@
+// default behavior
+
 :root {
   color-scheme: dark only;
 }
 
-@font-face {
-  font-family: "Nexa";
-  src: url("/fonts/Nexa_Heavy.woff2") format("woff2");
-  font-weight: 700;
-  size-adjust: 125%;
-  font-display: swap;
+:focus-visible {
+  box-shadow: 0px 0px 18px 5px rgba(#ededed, 0.65);
 }
+
+// default font
 
 @font-face {
   font-family: "Nexa";
-  src: url("/fonts/Nexa_ExtraLight.woff2") format("woff2");
-  font-weight: 400;
-  size-adjust: 125%;
+  src: url("/fonts/nexa_light.woff2") format("woff2");
+  font-weight: 200;
+  font-style: normal;
   font-display: swap;
 }
+@font-face {
+  font-family: "Nexa";
+  src: url("/fonts/nexa_regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Nexa";
+  src: url("/fonts/nexa_bold.woff2") format("woff2");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+// scroll-bars
+
+::-webkit-scrollbar {
+  width: 12px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 0.4rem;
+  background-color: rgba(#030303, 0.3);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #dfdfdf;
+  border-radius: 20px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+
+  &:hover {
+    background-color: #c5c5c5;
+  }
+}
+
+// default page style
 
 html,
 body {
+  font-family: "Nexa";
   color: #ededed;
   background-color: #030303;
-  font-family: "Nexa";
   -webkit-tap-highlight-color: transparent;
   user-select: none;
 }
@@ -36,11 +75,13 @@ main {
   justify-content: center;
   align-items: center;
   overflow: hidden;
+
+  text-shadow: 4px 3px 7px rgba(#030303, 0.4);
   cursor: default;
 }
 
 h1 {
-  font-size: 125%;
+  font-size: 150%;
   font-weight: bold;
 }
 
@@ -53,21 +94,36 @@ a {
 }
 
 footer {
-  padding: 1.5% 3.5%;
+  padding: 1.5rem 3%;
+  width: 100%;
   display: flex;
-  justify-content: space-between;
-  font-size: 70%;
-}
+  justify-content: center;
+  align-items: center;
+  font-size: 90%;
+  font-weight: lighter;
 
-@media (max-width: 768px) {
-  a {
-    text-decoration: underline;
+  span {
+    position: relative;
+    bottom: 1px;
   }
 
-  footer {
-    font-size: min(2.5vw, 65%);
-    flex-direction: column;
+  .responsive-holder {
+    width: 100%;
+    max-width: 1440px;
+
+    display: flex;
+    justify-content: space-between;
     align-items: center;
+  }
+
+  @media (max-width: 768px) {
+    padding: 1rem 1%;
+    font-size: min(75%, 3.5vw);
     text-align: center;
+
+    .responsive-holder {
+      flex-direction: column;
+      gap: 5px;
+    }
   }
 }

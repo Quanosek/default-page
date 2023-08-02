@@ -1,1 +1,1 @@
-## klalo.pl default host page
+## Domena [klalo.pl](https://www.klalo.pl/)
